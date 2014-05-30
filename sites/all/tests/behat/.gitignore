@@ -1,0 +1,4 @@
+composer.lock
+behat.local.yml
+bin
+vendor

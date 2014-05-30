@@ -1,0 +1,4 @@
+name = "Drupalcamp Yorkshire 2014 deploy content"
+description = "Create some items such as nodes and taxonomy terms"
+core = 7.x
+package = Drupalcamp Yorkshire 2014
