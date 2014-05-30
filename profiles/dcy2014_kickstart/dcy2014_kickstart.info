@@ -70,7 +70,6 @@ dependencies[] = strongarm
 dependencies[] = features
 
 ; Distribution modules.
-dependencies[] = dcy2014_roles
 
 ; System Requirements.
 php_memory_limit = 128M
