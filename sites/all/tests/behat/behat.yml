@@ -1,8 +1,7 @@
-# Behat.yml
+# behat.yml
 default:
   paths:
     features: 'features'
-    bootstrap: 'features/bootstrap'
   context:
     parameters:
       default_browser: 'goutte'

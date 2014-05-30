@@ -1,33 +1,22 @@
+# behat.travis.yml
 default:
   paths:
     features: 'features'
+  context:
+    parameters:
+      default_browser: 'goutte'
   extensions:
     Behat\MinkExtension\Extension:
       goutte: ~
+      default_session: 'goutte'
       selenium2: ~
       base_url: http://127.0.0.1:8888
     Drupal\DrupalExtension\Extension:
       blackbox: ~
+      api_driver: 'drupal'
       drush:
         alias: self
       # This will be setup by .travis.yml like so:
       # export BEHAT_PARAMS="extensions[Drupal\\DrupalExtension\\Extension][drupal][drupal_root]=$DRUPAL_ROOT"
       #drupal:
       #  drupal_root: "/path/to/drupal/root"
-      region_map:
-        # Regions for Layouts
-        Header: ".region-header"
-        Featured: ".region-featured"
-        Highlighted: ".region-highlighted"
-        Help: ".region-help"
-        Content: ".region-content"
-        Sidebar first: ".region-sidebar-first"
-        Sidebar second: ".region-sidebar-second"
-        Triptych first: ".region-triptych-first"
-        Triptych middle: ".region-triptych-middle"
-        Triptych last: ".region-triptych-last"
-        Footer first column: ".region-footer-firstcolumn"
-        Footer second column: ".region-footer-secondcolumn"
-        Footer third column: ".region-footer-thirdcolumn"
-        Footer fourth column: ".region-footer-fourthcolumn"
-        Footer: ".region-footer"
