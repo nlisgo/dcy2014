@@ -5,7 +5,7 @@ Feature: Editor role
   I want to be able to administer content
 
   @api
-  Scenario Outline: Access edit link while on content pages
+  Scenario: Access edit link while on content pages
     Given I am logged in as a user with the "editor" role
     When I am viewing a "page" node with the title "New Page"
     Then I should see the heading "New Page"
