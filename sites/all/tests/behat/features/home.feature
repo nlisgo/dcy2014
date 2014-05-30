@@ -10,7 +10,7 @@ Feature: Homepage
     And I should see "Drupalcamp Yorkshire 2014 Install Profile"
     And I should not see "Log out"
 
-  @api @develop
+  @api
   Scenario Outline: View the homepage while logged in
     Given I am logged in as a user with the "<role>" role
     When I am on the homepage

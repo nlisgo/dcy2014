@@ -1,0 +1,7 @@
+name = Drupalcamp Yorkshire 2014 - Roles
+core = 7.x
+package = DCY2014
+version = 7.x-1.0
+project = dcy2014_roles
+features[features_api][] = api:2
+project path = sites/all/modules/custom
