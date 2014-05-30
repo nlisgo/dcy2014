@@ -14,14 +14,13 @@ install:
   - mysql -e 'create database dcy2014;'
   - sudo apt-get --quiet=2 install apache2 libapache2-mod-php5 php5-cli php5-cgi php5-curl php5-gd php5-mysql > /dev/null
 
-  # Install Drush
-  - pear channel-discover pear.drush.org
-  - pear install drush/drush
-  - phpenv rehash
+  # Install the latest Drush 6.
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - composer global require --prefer-source --no-interaction drush/drush:6.*
 
   # Run composer
   - cd sites/all/tests/behat
-  - composer install
+  - composer install --no-interaction --prefer-source
 
   # Going back
   - cd ../../../..
