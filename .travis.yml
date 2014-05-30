@@ -47,8 +47,7 @@ before_script:
   - cd sites/all/tests/behat
 
   # Make the Travis tests repos agnostic by injecting drupal_root with BEHAT_PARAMS
-  - BUILD_OWNER=`dirname $TRAVIS_BUILD_DIR`
-  - export BEHAT_PARAMS="extensions[Drupal\\DrupalExtension\\Extension][drupal][drupal_root]=$BUILD_OWNER/dcy2014"
+  - export BEHAT_PARAMS="extensions[Drupal\\DrupalExtension\\Extension][drupal][drupal_root]=$TRAVIS_BUILD_DIR"
 
 script:
 
