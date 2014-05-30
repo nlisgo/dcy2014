@@ -25,13 +25,15 @@ install:
   # Going back
   - cd ../../../..
 
+  - echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
 before_script:
 
   # Install Profile
   - sudo chmod -R 777 sites/all
   - mkdir -p sites/default/files
   - sudo chmod -R 777 sites/default/files
-  - php -d sendmail_path=`which true` `pear config-get php_dir`/drush/drush.php si dcy2014_kickstart --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dcy2014 --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Drupalcamp Yorkshire 2014 Install Profile" --yes
+  - drush si dcy2014_kickstart --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dcy2014 --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Drupalcamp Yorkshire 2014 Install Profile" --yes
   - drush updatedb -y || true
   - drush cc all
 
