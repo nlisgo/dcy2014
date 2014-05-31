@@ -117,7 +117,7 @@ function install_welcome_submit($form, &$form_state) {
  * after that.
  */
 function dcy2014_kickstart_install_additional_modules() {
-  $modules = array();
+  $modules = array('dcy2014_roles');
 
   // Resolve the dependencies now, so that module_enable() doesn't need
   // to do it later for each individual module (which kills performance).
